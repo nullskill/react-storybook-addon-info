@@ -54,26 +54,19 @@ export default {
       Object.assign(mtrcConf, options.mtrcConf);
     }
 
-    return this.add(storyName, (context) => {
-      const props = {
-        info,
-        context,
-        showInline: Boolean(options.inline),
-        showHeader: Boolean(options.header),
-        showSource: Boolean(options.source),
-        propTables: options.propTables,
-        styles: typeof options.styles === 'function'
-          ? options.styles
-          : (s) => s,
-        mtrcConf
-      };
-
-      return (
-        <Story {...props}>
-          {storyFn(context)}
-        </Story>
-      );
-    });
+    const props = {
+      info,
+      // context,
+      showInline: Boolean(options.inline),
+      showHeader: Boolean(options.header),
+      showSource: Boolean(options.source),
+      propTables: options.propTables,
+      styles: typeof options.styles === 'function'
+        ? options.styles
+        : (s) => s,
+      mtrcConf
+    };
+    return this.addDecorator(story => (<Story {...props}>{story()}</Story>) ).add(storyName, storyFn);
   }
 };
 
