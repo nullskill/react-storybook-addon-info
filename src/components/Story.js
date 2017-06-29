@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MTRC from 'markdown-to-react-components';
 import PropTable from './PropTable';
 import Node from './Node';
@@ -312,21 +313,21 @@ export default class Story extends React.Component {
 
 Story.displayName = 'Story';
 Story.propTypes = {
-  context: React.PropTypes.object,
-  info: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.node,
+  context: PropTypes.object,
+  info: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
   ]),
-  propTables: React.PropTypes.arrayOf(React.PropTypes.func),
-  showInline: React.PropTypes.bool,
-  showHeader: React.PropTypes.bool,
-  showSource: React.PropTypes.bool,
-  styles: React.PropTypes.func.isRequired,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.object,
-    React.PropTypes.array,
+  propTables: PropTypes.arrayOf(PropTypes.func),
+  showInline: PropTypes.bool,
+  showHeader: PropTypes.bool,
+  showSource: PropTypes.bool,
+  styles: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
   ]),
-  mtrcConf: React.PropTypes.object
+  mtrcConf: PropTypes.object
 };
 
 Story.defaultProps = {

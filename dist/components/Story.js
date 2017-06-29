@@ -48,6 +48,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _markdownToReactComponents = require('markdown-to-react-components');
 
 var _markdownToReactComponents2 = _interopRequireDefault(_markdownToReactComponents);
@@ -451,15 +455,15 @@ exports.default = Story;
 
 Story.displayName = 'Story';
 Story.propTypes = {
-  context: _react2.default.PropTypes.object,
-  info: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.node]),
-  propTables: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.func),
-  showInline: _react2.default.PropTypes.bool,
-  showHeader: _react2.default.PropTypes.bool,
-  showSource: _react2.default.PropTypes.bool,
-  styles: _react2.default.PropTypes.func.isRequired,
-  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.object, _react2.default.PropTypes.array]),
-  mtrcConf: _react2.default.PropTypes.object
+  context: _propTypes2.default.object,
+  info: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
+  propTables: _propTypes2.default.arrayOf(_propTypes2.default.func),
+  showInline: _propTypes2.default.bool,
+  showHeader: _propTypes2.default.bool,
+  showSource: _propTypes2.default.bool,
+  styles: _propTypes2.default.func.isRequired,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.array]),
+  mtrcConf: _propTypes2.default.object
 };
 
 Story.defaultProps = {
