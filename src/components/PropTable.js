@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PropVal from './PropVal';
 
 const stylesheet = {
@@ -14,11 +15,11 @@ function isNotEmpty(obj) {
 }
 
 const PropTypesMap = new Map();
-for (const typeName in React.PropTypes) {
-  if (!React.PropTypes.hasOwnProperty(typeName)) {
+for (const typeName in PropTypes) {
+  if (!PropTypes.hasOwnProperty(typeName)) {
     continue;
   }
-  const type = React.PropTypes[typeName];
+  const type = PropTypes[typeName];
   PropTypesMap.set(type, typeName);
   PropTypesMap.set(type.isRequired, typeName);
 }
@@ -151,5 +152,5 @@ export default class PropTable extends React.Component {
 
 PropTable.displayName = 'PropTable';
 PropTable.propTypes = {
-  type: React.PropTypes.func,
+  type: PropTypes.func,
 };

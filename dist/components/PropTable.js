@@ -40,6 +40,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _PropVal = require('./PropVal');
 
 var _PropVal2 = _interopRequireDefault(_PropVal);
@@ -59,11 +63,11 @@ function isNotEmpty(obj) {
 }
 
 var PropTypesMap = new _map2.default();
-for (var typeName in _react2.default.PropTypes) {
-  if (!_react2.default.PropTypes.hasOwnProperty(typeName)) {
+for (var typeName in _propTypes2.default) {
+  if (!_propTypes2.default.hasOwnProperty(typeName)) {
     continue;
   }
-  var type = _react2.default.PropTypes[typeName];
+  var type = _propTypes2.default[typeName];
   PropTypesMap.set(type, typeName);
   PropTypesMap.set(type.isRequired, typeName);
 }
@@ -264,5 +268,5 @@ exports.default = PropTable;
 
 PropTable.displayName = 'PropTable';
 PropTable.propTypes = {
-  type: _react2.default.PropTypes.func
+  type: _propTypes2.default.func
 };
