@@ -77,26 +77,25 @@ exports.default = {
       (0, _assign2.default)(mtrcConf, options.mtrcConf);
     }
 
-    return this.add(storyName, function (context) {
-      var props = {
-        info: info,
-        context: context,
-        showInline: Boolean(options.inline),
-        showHeader: Boolean(options.header),
-        showSource: Boolean(options.source),
-        propTables: options.propTables,
-        styles: typeof options.styles === 'function' ? options.styles : function (s) {
-          return s;
-        },
-        mtrcConf: mtrcConf
-      };
-
+    var props = {
+      info: info,
+      // context,
+      showInline: Boolean(options.inline),
+      showHeader: Boolean(options.header),
+      showSource: Boolean(options.source),
+      propTables: options.propTables,
+      styles: typeof options.styles === 'function' ? options.styles : function (s) {
+        return s;
+      },
+      mtrcConf: mtrcConf
+    };
+    return this.addDecorator(function (story) {
       return _react2.default.createElement(
         Story,
         props,
-        storyFn(context)
+        story()
       );
-    });
+    }).add(storyName, storyFn);
   }
 };
 function setDefaults(newDefaults) {

@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "prepublish": ". ./.scripts/prepublish.sh",
+    "prepublish": "node .scripts/prepublish.js",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
-    "markdown-to-react-components": "^0.2.1",
+    "markdown-to-react-components": "github:nullskill/markdown-to-react-components",
     "react-addons-create-fragment": "^15.3.2"
   },
   "main": "dist/index.js",
